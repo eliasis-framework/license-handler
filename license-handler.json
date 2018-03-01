@@ -16,7 +16,7 @@
    "url-import": "https://raw.githubusercontent.com/eliasis-framework/http-license-handler/master/",
    "installation-files": {
       "http-license-handler": {
-         "0": "http-license-handler.jsond",
+         "0": "http-license-handler.json",
          "1": "LICENSE",
          "2": "composer.json",
          "config": [
