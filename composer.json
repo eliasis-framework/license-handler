@@ -27,7 +27,7 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "support": {
         "issues": "https://bitbucket.org/eliasis-framework/license-handler/issues",
         "forum": "http://stackoverflow.com/tags/eliasis-framework",
