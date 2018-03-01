@@ -1,0 +1,54 @@
+language: php
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+dist: trusty
+
+branches:
+  only:
+    - master
+
+git:
+  depth: 5
+
+services:
+  - mysql
+
+test:
+  adapter:  mysql2
+  database: phpunit
+  username: travis
+  encoding: utf8
+
+php:
+  - 5.6
+  - 7.0
+  - 7.1
+  - 7.2
+  - hhvm
+  - nightly
+  
+matrix:
+  fast_finish: true
+
+  allow_failures:
+    - php: nightly
+
+before_script:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+  - mysql -e 'CREATE DATABASE phpunit;'
+  - export PATH="./vendor/bin:$PATH"
+  - travis_retry composer self-update
+  - travis_retry composer install
+
+script:
+  # - phpunit --configuration ./phpunit.xml --testsuite HTTP_Request_Logger
+  - phpcs --standard=phpcs.xml $(find . -name '*.php')
+  - phpmd src,tests text ./phpmd.xml
+
+after_success:
+ - bash <(curl -s https://codecov.io/bash)

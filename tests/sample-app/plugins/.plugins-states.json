@@ -1,0 +1,8 @@
+{
+    "Default": {
+        "LicenseHandler": {
+            "action": "activation",
+            "state": "active"
+        }
+    }
+}

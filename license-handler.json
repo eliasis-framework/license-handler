@@ -1,0 +1,51 @@
+{
+   "id": "LicenseHandler",
+   "name": "License Handler",
+   "version": "1.0.1",
+   "description": {
+      "en": "Licensing and applications manager.",
+      "es": "Gestión de licencias y aplicaciones."
+   },
+   "state": "active",
+   "category": "eliasis-plugin",
+   "url": "https://github.com/eliasis-framework/http-license-handler.git",
+   "author": "Josantonius",
+   "author-url": "https://josantonius.com/",
+   "license": "MIT",
+   "hooks-controller": "Launcher",
+   "url-import": "https://raw.githubusercontent.com/eliasis-framework/http-license-handler/master/",
+   "installation-files": {
+      "http-license-handler": {
+         "0": "http-license-handler.jsond",
+         "1": "LICENSE",
+         "2": "composer.json",
+         "config": [
+            "database.php",
+            "datetime.php",
+            "namespaces.php",
+            "rows",
+            "set-hooks",
+            "tables.php"
+         ],
+         "src": {
+            "Controller": {
+               "0": "Application.php",
+               "1": "Launcher.php",
+               "2": "License.php",
+               "3": "Option.php",
+               "4": "Site.php",
+               "Exception": [
+                  "LHException.php"
+               ]
+            },
+            "Model": [
+               "Application.php",
+               "Launcher.php",
+               "License.php",
+               "Option.php",
+               "Site.php"
+            ]
+         }
+      }
+   }
+}
