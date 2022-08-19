@@ -1,6 +1,7 @@
 # License Handler · Eliasis PHP Framework plugin
 
-[![Packagist](https://img.shields.io/packagist/v/eliasis-framework/license-handler.svg)](https://packagist.org/packages/eliasis-framework/license-handler) [![Downloads](https://img.shields.io/packagist/dt/eliasis-framework/license-handler.svg)](https://github.com/eliasis-framework/license-handler) [![License](https://img.shields.io/packagist/l/eliasis-framework/license-handler.svg)](https://github.com/eliasis-framework/license-handler/blob/master/LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1310dbbd9f8b49fba6589f61795de09e)](https://www.codacy.com/app/Josantonius/license-handler?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=eliasis-framework/license-handler&amp;utm_campaign=Badge_Grade) [![Build Status](https://travis-ci.org/eliasis-framework/license-handler.svg?branch=master)](https://travis-ci.org/eliasis-framework/license-handler) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![codecov](https://codecov.io/gh/eliasis-framework/license-handler/branch/master/graph/badge.svg)](https://codecov.io/gh/eliasis-framework/license-handler)
+[![Packagist](https://img.shields.io/packagist/v/eliasis-framework/license-handler.svg)](https://packagist.org/packages/eliasis-framework/license-handler)
+[![License](https://img.shields.io/packagist/l/eliasis-framework/license-handler.svg)](https://github.com/eliasis-framework/license-handler/blob/master/LICENSE)
 
 [Versión en español](README-ES.md)
 
@@ -15,10 +16,8 @@ Licensing and applications manager.
 - [Usage](#usage)
 - [Database](#database)
 - [Tests](#tests)
-- [TODO](#-todo)
-- [Contribute](#contribute)
+- [Sponsor](#Sponsor)
 - [License](#license)
-- [Copyright](#copyright)
 
 ---
 
@@ -32,15 +31,15 @@ The preferred way to install this extension is through [Composer](http://getcomp
 
 To install **License Handler**, simply:
 
-    $ composer require eliasis-framework/license-handler
+    composer require eliasis-framework/license-handler
 
 The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
 
-    $ composer require eliasis-framework/license-handler --prefer-source
+    composer require eliasis-framework/license-handler --prefer-source
 
 You can also **clone the complete repository** with Git:
 
-    $ git clone https://github.com/eliasis-framework/license-handler.git
+    git clone https://github.com/eliasis-framework/license-handler.git
 
 ## Available Methods
 
@@ -48,7 +47,7 @@ Available methods in this plugin:
 
 ### Applications
 
-#### - Add application:
+#### - Add application
 
 ```php
 $application->add($name, $type, $category, $active);
@@ -63,7 +62,7 @@ $application->add($name, $type, $category, $active);
 
 **@return** (int) → Application inserted ID.
 
-#### - Update application:
+#### - Update application
 
 ```php
 $application->update($id, $name, $type, $category, $active);
@@ -81,7 +80,7 @@ $application->update($id, $name, $type, $category, $active);
 
 ### Sites
 
-#### - Add site:
+#### - Add site
 
 ```php
 $site->add($domain, $host, $ip, $authorized);
@@ -96,7 +95,7 @@ $site->add($domain, $host, $ip, $authorized);
 
 **@return** (int) → Site inserted ID.
 
-#### - Update site:
+#### - Update site
 
 ```php
 $site->update($id, $domain, $host, $ip, $authorized);
@@ -114,7 +113,7 @@ $site->update($id, $domain, $host, $ip, $authorized);
 
 ### License
 
-#### - Generate license key:
+#### - Generate license key
 
 ```php
 $license->generateKey($characters, $segments);
@@ -127,7 +126,7 @@ $license->generateKey($characters, $segments);
 
 **@return** (string) → License key.
 
-#### - Add license:
+#### - Add license
 
 ```php
 $license->add($appID, $siteID, $key, $state, $expire);
@@ -143,7 +142,7 @@ $license->add($appID, $siteID, $key, $state, $expire);
 
 **@return** (int) → License inserted ID.
 
-#### - Update license:
+#### - Update license
 
 ```php
 $license->update($id, $appID, $siteID, $key, $state, $expire);
@@ -160,7 +159,7 @@ $license->update($id, $appID, $siteID, $key, $state, $expire);
 
 **@return** (int) → Rows affected.
 
-#### - Check if license exists:
+#### - Check if license exists
 
 ```php
 $license->keyExists($license);
@@ -174,7 +173,7 @@ $license->keyExists($license);
 
 ### Options
 
-#### - Add option:
+#### - Add option
 
 ```php
 $option->add($licenseID, $name, $value);
@@ -188,7 +187,7 @@ $option->add($licenseID, $name, $value);
 
 **@return** (int) → Option inserted ID.
 
-#### - Update option:
+#### - Update option
 
 ```php
 $option->update($id, $licenseID, $name, $value);
@@ -241,13 +240,13 @@ $application = Plugin::WP_Plugin_Info()->getControllerInstance('Application');
 
 ### Applications
 
-#### - Add application:
+#### - Add application
 
 ```php
 $appID = $application->add('app-name', 'plugin', 'WordPress', 1);
 ```
 
-#### - Update application:
+#### - Update application
 
 ```php
 $application->update($appID, 'new-app-name', 'module', 'Prestashop', 1);
@@ -255,30 +254,30 @@ $application->update($appID, 'new-app-name', 'module', 'Prestashop', 1);
 
 ### Sites
 
-#### - Add site:
+#### - Add site
 
 ```php
 $siteID = $site->add(
-	'domain.com', 
-	'host.domain.com',
-	'87.142.85.70', 1
+ 'domain.com', 
+ 'host.domain.com',
+ '87.142.85.70', 1
 );
 ```
 
-#### - Update site:
+#### - Update site
 
 ```php
 $site->update(
-	$siteID, 
-	'new-domain.com', 
-	'host.new-domain.com', 
-	'87.142.85.70', 1
+ $siteID, 
+ 'new-domain.com', 
+ 'host.new-domain.com', 
+ '87.142.85.70', 1
 );
 ```
 
 ### License
 
-#### - Generate license key:
+#### - Generate license key
 
 ```php
 $license = $license->generateKey(); // 3FGSV-BZ49N-U79EA-S96ZY-MFQ63
@@ -292,7 +291,7 @@ $license = $license->generateKey(6, 5); // SF4W2H-FEJKZ5-PU7KAD-N77486-BKMJSW
 $license = $license->generateKey(4, 2); // FT3Q-EBT5
 ```
 
-#### - Add license:
+#### - Add license
 
 ```php
 $licenseID = $license->add(1, 1, $key, $license, '+1day');
@@ -310,13 +309,13 @@ $licenseID = $license->add(1, 1, $key, $license, '+1year');
 $licenseID = $license->add(1, 1, $key, $license, '+2years');
 ```
 
-#### - Update license:
+#### - Update license
 
 ```php
 $license->update(1, 1, $key, $license, '+3weeks');
 ```
 
-#### - Check if license exists:
+#### - Check if license exists
 
 ```php
 $license->keyExists('SF4W2H-FEJKZ5-PU7KAD-N77486-BKMJSW');
@@ -324,13 +323,13 @@ $license->keyExists('SF4W2H-FEJKZ5-PU7KAD-N77486-BKMJSW');
 
 ### Options
 
-#### - Add option:
+#### - Add option
 
 ```php
 $option->add($licenseID, 'lang', 'es-ES');
 ```
 
-#### - Update option:
+#### - Update option
 
 ```php
 $option->update($id, $licenseID, 'lang', 'en-EN');
@@ -340,7 +339,7 @@ $option->update($id, $licenseID, 'lang', 'en-EN');
 
 This plugin will create the following tables.
 
-### - test_applications:
+### - test_applications
 
 The table structure created is as follows:
 
@@ -354,7 +353,7 @@ The table structure created is as follows:
 | updated | TIMESTAMP |
 | created | TIMESTAMP |
 
-### - test_sites:
+### - test_sites
 
 The table structure created is as follows:
 
@@ -368,7 +367,7 @@ The table structure created is as follows:
 | updated | TIMESTAMP |
 | created | TIMESTAMP |
 
-### - test_licenses:
+### - test_licenses
 
 The table structure created is as follows:
 
@@ -384,7 +383,7 @@ The table structure created is as follows:
 | updated | TIMESTAMP |
 | created | TIMESTAMP |
 
-### - test_options:
+### - test_options
 
 The table structure created is as follows:
 
@@ -395,63 +394,39 @@ The table structure created is as follows:
 | option_name | VARCHAR(180) |
 | option_value | LONGTEXT |
 
-## Tests 
+## Tests
 
 To run [tests](tests) you just need [composer](http://getcomposer.org/download/) and to execute the following:
 
-    $ git clone https://github.com/eliasis-framework/license-handler.git
+    git clone https://github.com/eliasis-framework/license-handler.git
     
-    $ cd license-handler
+    cd license-handler
 
-    $ composer install
+    composer install
 
 Run unit tests with [PHPUnit](https://phpunit.de/):
 
-    $ composer phpunit
+    composer phpunit
 
 Run [PSR2](http://www.php-fig.org/psr/psr-2/) code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
 
-    $ composer phpcs
+    composer phpcs
 
 Run [PHP Mess Detector](https://phpmd.org/) tests to detect inconsistencies in code style:
 
-    $ composer phpmd
+    composer phpmd
 
 Run all previous tests:
 
-    $ composer tests
+    composer tests
 
-## ☑ TODO
+## Sponsor
 
-- [ ] Run PHPUnit on Travis CI.
-- [ ] Add more methods.
-- [ ] Improve tests.
-- [ ] Improve documentation.
-- [ ] Refactor code for disabled code style rules. See [phpmd.xml](phpmd.xml) and [.php_cs.dist](.php_cs.dist).
-
-## Contribute
-
-If you would like to help, please take a look at the list of
-[issues](https://github.com/eliasis-framework/license-handler/issues) or the [To Do](#-todo) checklist.
-
-**Pull requests**
-
-* [Fork and clone](https://help.github.com/articles/fork-a-repo).
-* Run the command `composer install` to install the dependencies.
-  This will also install the [dev dependencies](https://getcomposer.org/doc/03-cli.md#install).
-* Run the command `composer fix` to excute code standard fixers.
-* Run the [tests](#tests).
-* Create a **branch**, **commit**, **push** and send me a
-  [pull request](https://help.github.com/articles/using-pull-requests).
+If this project helps you to reduce your development time,
+[you can sponsor me](https://github.com/josantonius#sponsor) to support my open source work :blush:
 
 ## License
 
-This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file for more info.
+This repository is licensed under the [MIT License](LICENSE).
 
-## Copyright
-
-2017 - 2018 Josantonius, [josantonius.com](https://josantonius.com/)
-
-If you find it useful, let me know :wink:
-
-You can contact me on [Twitter](https://twitter.com/Josantonius) or through my [email](mailto:hello@josantonius.com).
+Copyright © 2017-2022, [Josantonius](https://github.com/josantonius#contact)

@@ -6,6 +6,9 @@ build/artifacts/
 vendor/
 docs/_build
 docs/*.pyc
-.git*/
+.vscode/
 .idea
 .DS_STORE
+license-handler.code-workspace
+.repository.md
+old/
